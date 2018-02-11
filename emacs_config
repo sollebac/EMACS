@@ -1,0 +1,70 @@
+;; Cabellos Jose Luis  Sun Feb 11 13:30:31 CST 2018
+;; .emacs
+;;; uncomment this line to disable loading of "default.el" at startup
+;; (setq inhibit-default-init t)
+
+;; enable visual feedback on selections
+;(setq transient-mark-mode t)
+
+;; default to better frame titles
+(setq frame-title-format
+      (concat  "%b - emacs@" (system-name)))
+
+;; default to unified diffs
+(setq diff-switches "-u")
+
+;; always end a file with a newline
+;(setq require-final-newline 'query)
+
+;;; uncomment for CJK utf-8 support for non-Asian users
+;; (require 'un-define)
+;;(require 'whitespace)
+
+
+;; Inhibit startup message
+(setq inhibit-startup-screen t)
+;; Activate font-lock mode (syntax coloring).
+(global-font-lock-mode t)
+
+
+;; To customize the background color
+;; It is much more pleasant and less tiring to use a dark background.
+(set-foreground-color "white")
+(set-background-color "black")
+;; Set cursor and mouse colours:
+(set-cursor-color "yellow")
+(set-mouse-color "white")
+
+
+;; http://www.emacswiki.org/emacs/EmacsCrashCode
+(setq-default indicate-empty-lines t) ;;Show empty lines
+(show-paren-mode 1)                            ; Highlight parenthesis pairs
+ (setq blink-matching-paren-distance nil)       ; Blinking parenthesis
+ (setq show-paren-style 'expression)            ; Highlight text between parens
+;;(autoload 'blank-mode           "blank-mode" "Toggle blank visualization."        t)
+
+;;(add-to-list 'load-path' "~/.emacs.d/site-lisp/blank-mode")
+;;(require 'blank-mode')
+;;(autoload 'blank-mode           "blank-mode" "Toggle blank visualization."        t)
+;;(standard-display-ascii ?\t "^I")
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(show-paren-mode t))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+(setq column-number-mode t)
+
+
+(add-hook 'python-mode-hook 'guess-style-guess-tabs-mode)
+   (add-hook 'python-mode-hook (lambda ()
+                                  (when indent-tabs-mode
+                                    (guess-style-guess-tab-width))))
+
+
