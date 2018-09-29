@@ -1,2 +1,2 @@
 # EMACS
-My config emacs editor 
+emacs editor 
